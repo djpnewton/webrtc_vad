@@ -10,14 +10,10 @@
 *.rules
 *.scons
 *.sdf
-*.sln
 *.suo
 *.target.mk
 *.targets
 *.user
-*.vcproj
-*.vcxproj
-*.vcxproj.filters
 *.vpj
 *.vpw
 *.vpwhistu
@@ -27,3 +23,6 @@
 *_proto_cpp.xml
 *~
 .*.sw?
+
+Debug/
+*.opensdf
