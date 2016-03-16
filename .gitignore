@@ -26,3 +26,5 @@
 
 Debug/
 *.opensdf
+ipch/
+portaudio/build/msvc/Win32/
