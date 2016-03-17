@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
+    <Filter Include="Source Files\signal_processing">
+      <UniqueIdentifier>{193c20ed-be29-47f9-ba28-23caa206381c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="webrtc\common_audio\vad\vad.cc">
@@ -47,6 +50,45 @@
     </ClCompile>
     <ClCompile Include="webrtc\common_audio\vad\webrtc_vad.c">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="webrtc\common_audio\signal_processing\cross_correlation.c">
+      <Filter>Source Files\signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="webrtc\common_audio\signal_processing\division_operations.c">
+      <Filter>Source Files\signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="webrtc\common_audio\signal_processing\downsample_fast.c">
+      <Filter>Source Files\signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="webrtc\common_audio\signal_processing\energy.c">
+      <Filter>Source Files\signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="webrtc\common_audio\signal_processing\min_max_operations.c">
+      <Filter>Source Files\signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="webrtc\common_audio\signal_processing\resample.c">
+      <Filter>Source Files\signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="webrtc\common_audio\signal_processing\resample_48khz.c">
+      <Filter>Source Files\signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="webrtc\common_audio\signal_processing\resample_by_2.c">
+      <Filter>Source Files\signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="webrtc\common_audio\signal_processing\resample_by_2_internal.c">
+      <Filter>Source Files\signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="webrtc\common_audio\signal_processing\resample_fractional.c">
+      <Filter>Source Files\signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="webrtc\common_audio\signal_processing\spl_init.c">
+      <Filter>Source Files\signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="webrtc\common_audio\signal_processing\vector_scaling_operations.c">
+      <Filter>Source Files\signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="webrtc\common_audio\signal_processing\get_scaling_square.c">
+      <Filter>Source Files\signal_processing</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

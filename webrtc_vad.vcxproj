@@ -11,6 +11,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="webrtc\common_audio\signal_processing\cross_correlation.c" />
+    <ClCompile Include="webrtc\common_audio\signal_processing\division_operations.c" />
+    <ClCompile Include="webrtc\common_audio\signal_processing\downsample_fast.c" />
+    <ClCompile Include="webrtc\common_audio\signal_processing\energy.c" />
+    <ClCompile Include="webrtc\common_audio\signal_processing\get_scaling_square.c" />
+    <ClCompile Include="webrtc\common_audio\signal_processing\min_max_operations.c" />
+    <ClCompile Include="webrtc\common_audio\signal_processing\resample.c" />
+    <ClCompile Include="webrtc\common_audio\signal_processing\resample_48khz.c" />
+    <ClCompile Include="webrtc\common_audio\signal_processing\resample_by_2.c" />
+    <ClCompile Include="webrtc\common_audio\signal_processing\resample_by_2_internal.c" />
+    <ClCompile Include="webrtc\common_audio\signal_processing\resample_fractional.c" />
+    <ClCompile Include="webrtc\common_audio\signal_processing\spl_init.c" />
+    <ClCompile Include="webrtc\common_audio\signal_processing\vector_scaling_operations.c" />
     <ClCompile Include="webrtc\common_audio\vad\vad.cc" />
     <ClCompile Include="webrtc\common_audio\vad\vad_core.c" />
     <ClCompile Include="webrtc\common_audio\vad\vad_core_unittest.cc" />
