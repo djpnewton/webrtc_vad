@@ -19,7 +19,7 @@ BOOL CtrlHandler(DWORD fdwCtrlType)
     return TRUE;
 }
 
-void mic_data(const int16_t* values, int count, void* param)
+void mic_data(const int16_t* values, unsigned long count, void* param)
 {
     VadInst* vad = (VadInst*)param;
     int res = WebRtcVad_Process(vad, SAMPLE_RATE, values, count);
@@ -49,17 +49,15 @@ int _tmain(int argc, _TCHAR* argv[])
         return 1;
 
     // create mic
-    CMic::MicInit();
     CMic mic;
-    mic.Init(mic_data, vad, SAMPLE_RATE, SAMPLE_COUNT);
+    mic.Init(mic_data, vad, WAVE_MAPPER, SAMPLE_RATE, SAMPLE_COUNT);
     // start mic loop
     if (mic.Start())
     {
         while (keepRunning)
-            Pa_Sleep(1000);
+            Sleep(1000);
         mic.Stop();
     }
-    CMic::MicFree();
 
     WebRtcVad_Free(vad);
 

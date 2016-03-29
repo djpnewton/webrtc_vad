@@ -59,7 +59,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy  /y $(SolutionDir)portaudio\build\msvc\Win32\$(ConfigurationName)\portaudio.dll  $(OutputPath)portaudio.dll*</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -80,7 +81,8 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy  /y $(SolutionDir)portaudio\build\msvc\Win32\$(ConfigurationName)\portaudio.dll  $(OutputPath)portaudio.dll*</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -92,9 +94,6 @@
     <ClCompile Include="testvad.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\portaudio\build\msvc\portaudio.vcxproj">
-      <Project>{0a18a071-125e-442f-aff7-a3f68abecf99}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\webrtc_vad.vcxproj">
       <Project>{fd37701e-0327-475d-bdad-ca44c2e3142b}</Project>
     </ProjectReference>

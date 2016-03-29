@@ -1,31 +1,31 @@
 #pragma once
 
-#include "../portaudio/include/portaudio.h"
+#include <Windows.h>
+#include <mmreg.h>
 #include <list>
 #include <stdint.h>
 
-typedef void(*mic_output_t)(const int16_t* values, int count, void* param);
+typedef void(*mic_output_t)(const int16_t* values, unsigned long count, void* param);
 
 class CMic
 {
 private:
-    static bool pa_init;
-
     bool initialized;
-    PaStreamParameters input_parameters;
-    bool stream_open;
-    PaStream* stream;
+
+    DWORD waveId;
     int sample_rate;
     int frames_per_buffer;
+    WAVEFORMATEX wave_format;
+    bool stream_open;
+    bool stopping;
+    HWAVEIN hWaveIn;
+    HANDLE waveInThread;
+    WAVEHDR waveHeader[2];
 
     mic_output_t mic_cb;
     void* mic_cb_param;
 
-    static int pa_callback(const void* input, void* output,
-        unsigned long frame_count,
-        const PaStreamCallbackTimeInfo* time_info,
-        PaStreamCallbackFlags status_flags,
-        void *user_data);
+    static DWORD WINAPI waveInProc(LPVOID arg);
 
 public:
 
@@ -40,28 +40,7 @@ public:
     {
     }
 
-    bool Init(mic_output_t mic_cb, void* param, int sample_rate, int frames_per_buffer);
+    bool Init(mic_output_t mic_cb, void* param, DWORD wavein_id, int sample_rate, int frames_per_buffer);
     bool Start();
     bool Stop();
-
-    static bool MicInit()
-    {
-        if (!pa_init)
-        {
-            PaError err = Pa_Initialize();
-            if (err == paNoError)
-                pa_init = true;
-        }
-        return pa_init;
-    }
-    static bool MicFree()
-    {
-        if (pa_init)
-        {
-            PaError err = Pa_Terminate();
-            if (err == paNoError)
-                pa_init = false;
-        }
-        return !pa_init;
-    }
 };
